@@ -3,33 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Assignment #9: Giphy API</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link href = "./css/style.css" rel="stylesheet" />
+    <title>Giphy GIF Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="container my-5">
-      <h1 class="mb-4 text-center">Fetch a Gif</h1>
-      <!-- Stretch: Add search functionality by commenting out the <div> element below -->
+    <main class="container py-5">
+      <h1 class="text-center mb-2">Giphy GIF Finder</h1>
+      <p class="text-center text-muted mb-4">Search for GIFs and find one that fits your mood.</p>
 
-      <div class="row justify-content-center mb-3">
-        <div class="col-md-6">
-          <input type="text" id="search-input" class="form-control" placeholder="Search for a GIF">
+      <form id="search-form" class="row justify-content-center g-2 mb-4">
+        <div class="col-12 col-md-7">
+          <label for="search-input" class="visually-hidden">Search for a GIF</label>
+          <input type="text" id="search-input" class="form-control form-control-lg" placeholder="Search for a GIF..." value="basketball" />
         </div>
+        <div class="col-12 col-md-auto">
+          <button id="fetch-gif-btn" class="btn btn-primary btn-lg w-100" type="submit">Search GIFs</button>
+        </div>
+      </form>
+
+      <p id="status" class="text-center" role="status">Enter a search and press Search GIFs.</p>
+      <div id="gif-container" class="row g-3" aria-live="polite">
+        <!-- GIF results appear here -->
       </div>
-      
-
-      <!-- <div class="d-flex justify-content-center mb-4">
-        <button id="fetch-gif-btn" class="btn btn-primary">
-          Fetch a GIF
-        </button>
-      </div> -->
-
-      <div id="gif-container" class="row">
-        <!-- Output your gifs here -->
-      </div>
-    </div>
-
+    </main>
     <script src="./js/script.js"></script>
   </body>
 </html>
